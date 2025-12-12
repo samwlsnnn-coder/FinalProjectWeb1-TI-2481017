@@ -1,0 +1,76 @@
+/* style.css */
+
+/* Custom Animation untuk gambar Hero di Index */
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 3s infinite;
+}
+
+/* Scrollbar Custom (Opsional - agar terlihat lebih modern) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+/* 1. Animasi Kartu Muncul (Fade In Up) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards; /* Durasi 0.8 detik */
+}
+
+/* 2. Efek Hover pada Foto Profil */
+.profile-img-container {
+    overflow: hidden; /* Mencegah gambar keluar dari lingkaran saat di-zoom */
+}
+
+.profile-img-container img {
+    transition: transform 0.5s ease; /* Transisi halus */
+}
+
+.profile-img-container:hover img {
+    transform: scale(1.1); /* Zoom in 110% saat mouse di atas gambar */
+    filter: brightness(1.1); /* Sedikit lebih terang */
+}
+
+/* 3. Custom Scrollbar (Opsional - agar lebih modern) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1; /* Warna gray-300 */
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8; /* Warna gray-400 */
+}

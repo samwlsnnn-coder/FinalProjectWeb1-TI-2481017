@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata - Final Project</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen font-sans text-gray-800">
+
+    <nav class="bg-white shadow p-4 mb-8 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-bold text-blue-600 text-xl">Biznet Clone</a>
+            <ul class="flex space-x-4 text-sm font-semibold">
+                <li><a href="2481017_2526_assignment11.html" class="hover:text-blue-600 transition duration-300">HOME</a></li>
+                <li><a href="biodata.html" class="text-blue-600">BIODATA</a></li>
+                <li><a href="contact_us.html" class="hover:text-blue-600 transition duration-300">CONTACT</a></li>
+                <li><a href="posts.html" class="hover:text-blue-600 transition duration-300">POSTS</a></li>
+                <li><a href="freepage.html" class="hover:text-blue-600 transition duration-300">FREE</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 flex-grow mb-10 flex items-center justify-center">
+        <div class="animate-fade-in-up max-w-4xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+            
+            <div class="md:w-1/3 bg-gradient-to-br from-blue-600 to-blue-800 p-8 flex flex-col items-center justify-center text-white text-center">
+                <div class="profile-img-container w-48 h-48 rounded-full bg-white/20 border-4 border-white mb-4 shadow-lg">
+                    <img src="image/Foto Sam.jpg" alt="My Photo" class="object-cover w-full h-full">
+                </div>
+                <h2 class="text-3xl font-bold mt-2 tracking-wide">Samuel Wilson</h2>
+                <p class="opacity-90 font-light mt-1">Web Developer Student</p>
+                
+                <div class="mt-6 flex space-x-3">
+                </div>
+            </div>
+
+            <div class="md:w-2/3 p-8 md:p-10">
+                <div class="flex justify-between items-center border-b pb-4 mb-6">
+                    <h3 class="text-2xl font-bold text-gray-800">Personal Information</h3>
+                    <span class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wide">Active Student</span>
+                </div>
+                
+                <ul class="space-y-4 text-gray-600">
+                    <li class="flex flex-col sm:flex-row">
+                        <span class="font-bold w-32 text-gray-800">NIM:</span> 
+                        <span>2481017</span>
+                    </li>
+                    <li class="flex flex-col sm:flex-row">
+                        <span class="font-bold w-32 text-gray-800">Faculty:</span> 
+                        <span>Computer Science</span>
+                    </li>
+                    <li class="flex flex-col sm:flex-row">
+                        <span class="font-bold w-32 text-gray-800">Hobbies:</span> 
+                        <span> Gaming</span>
+                    </li>
+                </ul>
+
+                <div class="mt-8 bg-blue-50 p-6 rounded-xl border-l-4 border-blue-500 relative">
+                    <span class="absolute top-2 left-2 text-4xl text-blue-200 font-serif">"</span>
+                    <h3 class="text-lg font-bold text-blue-800 mb-2 pl-4">Class Reflection</h3>
+                    <p class="italic text-gray-700 pl-4 leading-relaxed">
+                        "During this Web Development class, I learned that creating responsive websites is challenging but incredibly rewarding. Tailwind CSS really speeds up my styling process compared to regular CSS!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4 mt-auto">
+        <p>&copy; 2025 Final Project Web Dev</p>
+    </footer>
+
+</body>
+</html>

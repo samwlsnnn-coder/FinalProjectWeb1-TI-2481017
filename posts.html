@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts Data</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind_config.js"></script>
+</head>
+<body class="bg-gray-50 flex flex-col min-h-screen">
+
+    <nav class="bg-white shadow p-4 mb-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-bold text-blue-600 text-xl">Biznet Clone</a>
+            <ul class="flex space-x-4 text-sm font-semibold">
+                <li><a href="2481017_2526_assignment11.html" class="hover:text-blue-600">HOME</a></li>
+                <li><a href="posts.html" class="text-blue-600">POSTS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 flex-grow">
+        <h1 class="text-3xl font-bold text-gray-800 mb-2 text-center">Latest Posts</h1>
+        
+        <div id="loading" class="text-center text-gray-500 py-10">Loading data...</div>
+        
+        <div id="postsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4 mt-auto">
+        <p>&copy; 2025 Final Project Web Dev</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

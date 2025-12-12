@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Samuel Wilson</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .error-input {
+            border-color: #ef4444 !important;
+            background-color: #fef2f2;
+        }
+        .success-message {
+            animation: slideDown 0.5s ease-out;
+        }
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-blue-50 flex flex-col min-h-screen">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-blue-600">MyPortfolio</div>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-blue-600 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="2481017_2526_assignment11.html" class="text-gray-700 hover:text-blue-600 transition">Home</a></li>
+                    <li><a href="biodata.html" class="text-gray-700 hover:text-blue-600 transition">Biodata</a></li>
+                    <li><a href="contact_us.html" class="text-blue-600 font-semibold hover:text-blue-800 transition">Contact</a></li>
+                    <li><a href="posts.html" class="text-gray-700 hover:text-blue-600 transition">Posts</a></li>
+                    <li><a href="freepage.html" class="text-gray-700 hover:text-blue-600 transition">freepage</a></li>
+                </ul>
+            </div>
+
+            <ul id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
+                <li><a href="index.html" class="block py-2 text-gray-700 hover:bg-blue-50 px-4 rounded transition">Home</a></li>
+                <li><a href="biodata.html" class="block py-2 text-gray-700 hover:bg-blue-50 px-4 rounded transition">Biodata</a></li>
+                <li><a href="contact_us.html" class="block py-2 text-blue-600 font-semibold hover:bg-blue-50 px-4 rounded transition">Contact</a></li>
+                <li><a href="posts.html" class="block py-2 text-gray-700 hover:bg-blue-50 px-4 rounded transition">Posts</a></li>
+                <li><a href="freepage.html" class="block py-2 text-gray-700 hover:bg-blue-50 px-4 rounded transition">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="py-12 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Student Registration</h1>
+            <p class="text-xl text-white opacity-90">Fill out the form to register</p>
+        </div>
+    </section>
+
+    <main class="flex-grow py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Success Message -->
+                <div id="success-message" class="hidden bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded-lg mb-6 success-message">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <div>
+                            <p class="font-bold">Registration Successful!</p>
+                            <p class="text-sm">Your form has been submitted successfully.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-2xl p-8">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Registration Form</h3>
+                    
+                    <form id="registration-form" class="space-y-6">
+                        <!-- Full Name -->
+                        <div>
+                            <label for="fullName" class="block text-sm font-medium text-gray-700 mb-2">
+                                Full Name <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" id="fullName" name="fullName" 
+                                placeholder="Enter your full name" 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none">
+                            <p id="fullName-error" class="hidden text-red-500 text-sm mt-1"></p>
+                        </div>
+
+                        <!-- Student ID (NIM) -->
+                        <div>
+                            <label for="nim" class="block text-sm font-medium text-gray-700 mb-2">
+                                Student ID (NIM) <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" id="nim" name="nim" 
+                                placeholder="Enter your NIM" 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none">
+                            <p id="nim-error" class="hidden text-red-500 text-sm mt-1"></p>
+                        </div>
+
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                Email Address <span class="text-red-500">*</span>
+                            </label>
+                            <input type="email" id="email" name="email" 
+                                placeholder="example@student.unai.edu" 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none">
+                            <p id="email-error" class="hidden text-red-500 text-sm mt-1"></p>
+                        </div>
+
+                        <!-- Faculty/Major -->
+                        <div>
+                            <label for="faculty" class="block text-sm font-medium text-gray-700 mb-2">
+                                Faculty/Major <span class="text-red-500">*</span>
+                            </label>
+                            <select id="faculty" name="faculty" 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none">
+                                <option value="">-- Select Faculty/Major --</option>
+                                <option value="Informatics Engineering">Informatics Engineering</option>
+                                <option value="Information Systems">Information Systems</option>
+                                <option value="Nursing">Nursing</option>
+                                <option value="Management">Management</option>
+                                <option value="Accounting">Accounting</option>
+                                <option value="Theology">Theology</option>
+                                <option value="English Education">English Education</option>
+                            </select>
+                            <p id="faculty-error" class="hidden text-red-500 text-sm mt-1"></p>
+                        </div>
+
+                        <!-- Date of Birth -->
+                        <div>
+                            <label for="dob" class="block text-sm font-medium text-gray-700 mb-2">
+                                Date of Birth <span class="text-red-500">*</span>
+                            </label>
+                            <input type="date" id="dob" name="dob" 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none">
+                            <p id="dob-error" class="hidden text-red-500 text-sm mt-1"></p>
+                        </div>
+
+                        <!-- Gender -->
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">
+                                Gender <span class="text-red-500">*</span>
+                            </label>
+                            <div class="flex space-x-6">
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="gender" value="Male" 
+                                        class="w-4 h-4 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                                    <span class="ml-2 text-gray-700">Male</span>
+                                </label>
+                                <label class="flex items-center cursor-pointer">
+                                    <input type="radio" name="gender" value="Female" 
+                                        class="w-4 h-4 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                                    <span class="ml-2 text-gray-700">Female</span>
+                                </label>
+                            </div>
+                            <p id="gender-error" class="hidden text-red-500 text-sm mt-1"></p>
+                        </div>
+
+                        <!-- Address -->
+                        <div>
+                            <label for="address" class="block text-sm font-medium text-gray-700 mb-2">
+                                Address <span class="text-red-500">*</span>
+                            </label>
+                            <textarea id="address" name="address" rows="4" 
+                                placeholder="Enter your complete address" 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none resize-none"></textarea>
+                            <p id="address-error" class="hidden text-red-500 text-sm mt-1"></p>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                                Phone Number <span class="text-red-500">*</span>
+                            </label>
+                            <input type="text" id="phone" name="phone" 
+                                placeholder="08123456789" 
+                                class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition outline-none">
+                            <p id="phone-error" class="hidden text-red-500 text-sm mt-1"></p>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" 
+                            class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold py-4 px-6 rounded-lg hover:opacity-90 transition transform hover:-translate-y-1 shadow-lg">
+                            Submit Registration
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">MyPortfolio</h3>
+                    <p class="text-gray-400">Final Project for Web Development Course</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="biodata.html" class="text-gray-400 hover:text-white transition">Biodata</a></li>
+                        <li><a href="contact_us.html" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Info</h3>
+                    <p class="text-gray-400">Universitas Advent Indonesia</p>
+                    <p class="text-gray-400">Bandung, Indonesia</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Samuel Wilson. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Form Validation Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('registration-form');
+            
+            if (form) {
+                addInputListeners();
+                form.addEventListener('submit', handleFormSubmit);
+            }
+        });
+
+        function addInputListeners() {
+            const inputs = ['fullName', 'nim', 'email', 'faculty', 'dob', 'address', 'phone'];
+            
+            inputs.forEach(inputId => {
+                const input = document.getElementById(inputId);
+                if (input) {
+                    input.addEventListener('input', function() {
+                        clearError(inputId);
+                    });
+                    
+                    input.addEventListener('focus', function() {
+                        this.classList.add('ring-2', 'ring-blue-500');
+                    });
+                    
+                    input.addEventListener('blur', function() {
+                        this.classList.remove('ring-2', 'ring-blue-500');
+                    });
+                }
+            });
+            
+            const genderInputs = document.querySelectorAll('input[name="gender"]');
+            genderInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    clearError('gender');
+                });
+            });
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            clearAllErrors();
+            
+            const formData = {
+                fullName: document.getElementById('fullName').value.trim(),
+                nim: document.getElementById('nim').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                faculty: document.getElementById('faculty').value,
+                dob: document.getElementById('dob').value,
+                gender: getSelectedGender(),
+                address: document.getElementById('address').value.trim(),
+                phone: document.getElementById('phone').value.trim()
+            };
+            
+            let isValid = true;
+            
+            // Validate Full Name
+            if (formData.fullName === '') {
+                showError('fullName', 'Full name is required');
+                isValid = false;
+            } else if (formData.fullName.length < 3) {
+                showError('fullName', 'Full name must be at least 3 characters');
+                isValid = false;
+            }
+            
+            // Validate NIM
+            if (formData.nim === '') {
+                showError('nim', 'Student ID (NIM) is required');
+                isValid = false;
+            } else if (formData.nim.length < 5) {
+                showError('nim', 'Student ID must be at least 5 characters');
+                isValid = false;
+            }
+            
+            // Validate Email
+            if (formData.email === '') {
+                showError('email', 'Email address is required');
+                isValid = false;
+            } else if (!isValidEmail(formData.email)) {
+                showError('email', 'Please enter a valid email address (e.g., name@example.com)');
+                isValid = false;
+            }
+            
+            // Validate Faculty
+            if (formData.faculty === '') {
+                showError('faculty', 'Please select a faculty/major');
+                isValid = false;
+            }
+            
+            // Validate Date of Birth
+            if (formData.dob === '') {
+                showError('dob', 'Date of birth is required');
+                isValid = false;
+            } else if (!isValidAge(formData.dob)) {
+                showError('dob', 'You must be at least 17 years old to register');
+                isValid = false;
+            }
+            
+            // Validate Gender
+            if (formData.gender === null) {
+                showError('gender', 'Please select your gender');
+                isValid = false;
+            }
+            
+            // Validate Address
+            if (formData.address === '') {
+                showError('address', 'Address is required');
+                isValid = false;
+            } else if (formData.address.length < 10) {
+                showError('address', 'Address must be at least 10 characters');
+                isValid = false;
+            }
+            
+            // Validate Phone Number
+            if (formData.phone === '') {
+                showError('phone', 'Phone number is required');
+                isValid = false;
+            } else if (!isValidPhone(formData.phone)) {
+                showError('phone', 'Phone number must contain only numbers');
+                isValid = false;
+            } else if (formData.phone.length < 10) {
+                showError('phone', 'Phone number must be at least 10 digits');
+                isValid = false;
+            } else if (formData.phone.length > 15) {
+                showError('phone', 'Phone number must not exceed 15 digits');
+                isValid = false;
+            }
+            
+            if (isValid) {
+                handleSuccessfulSubmission(formData);
+            } else {
+                const firstError = document.querySelector('.error-input');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstError.focus();
+                }
+            }
+        }
+
+        function getSelectedGender() {
+            const genderInputs = document.querySelectorAll('input[name="gender"]');
+            for (let input of genderInputs) {
+                if (input.checked) {
+                    return input.value;
+                }
+            }
+            return null;
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function isValidPhone(phone) {
+            const phoneRegex = /^[0-9]+$/;
+            return phoneRegex.test(phone);
+        }
+
+        function isValidAge(dateOfBirth) {
+            const dob = new Date(dateOfBirth);
+            const today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            const monthDiff = today.getMonth() - dob.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+            
+            return age >= 17;
+        }
+
+        function showError(inputId, message) {
+            const input = document.getElementById(inputId);
+            const errorElement = document.getElementById(`${inputId}-error`);
+            
+            if (input) {
+                input.classList.add('error-input', 'border-red-500');
+            }
+            
+            if (errorElement) {
+                errorElement.textContent = message;
+                errorElement.classList.remove('hidden');
+            }
+        }
+
+        function clearError(inputId) {
+            const input = document.getElementById(inputId);
+            const errorElement = document.getElementById(`${inputId}-error`);
+            
+            if (input) {
+                input.classList.remove('error-input', 'border-red-500');
+            }
+            
+            if (errorElement) {
+                errorElement.classList.add('hidden');
+                errorElement.textContent = '';
+            }
+        }
+
+        function clearAllErrors() {
+            const errorMessages = document.querySelectorAll('[id$="-error"]');
+            errorMessages.forEach(error => {
+                error.classList.add('hidden');
+                error.textContent = '';
+            });
+            
+            const errorInputs = document.querySelectorAll('.error-input');
+            errorInputs.forEach(input => {
+                input.classList.remove('error-input', 'border-red-500');
+            });
+        }
+
+        function handleSuccessfulSubmission(formData) {
+            const successMessage = document.getElementById('success-message');
+            if (successMessage) {
+                successMessage.classList.remove('hidden');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            
+            console.log('Form submitted successfully:', formData);
+            
+            setTimeout(() => {
+                document.getElementById('registration-form').reset();
+                
+                setTimeout(() => {
+                    if (successMessage) {
+                        successMessage.classList.add('hidden');
+                    }
+                }, 5000);
+            }, 1000);
+            
+            showSuccessNotification('Registration submitted successfully!');
+        }
+
+        function showSuccessNotification(message) {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
+            successDiv.style.animation = 'slideIn 0.5s ease-out';
+            successDiv.innerHTML = `
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            document.body.appendChild(successDiv);
+            
+            setTimeout(() => {
+                successDiv.style.opacity = '0';
+                successDiv.style.transform = 'translateX(100%)';
+                successDiv.style.transition = 'all 0.3s ease';
+                
+                setTimeout(() => {
+                    successDiv.remove();
+                }, 300);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

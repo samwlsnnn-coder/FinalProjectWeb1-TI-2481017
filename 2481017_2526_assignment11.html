@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biznet Clone - Final Project</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="tailwind_config.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        biznetBlue: '#00539C', // Contoh warna biru Biznet
+                        biznetGreen: '#97C00E', // Contoh warna hijau Biznet
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-gray-700 bg-gray-50 flex flex-col min-h-screen">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                <img src="image/logo.png" alt="Biznet Logo" class="h-12 w-auto">
+                <div class="flex flex-col border-l-2 border-gray-300 pl-4">
+                    <span class="font-bold text-biznetBlue uppercase text-sm tracking-wide">Web-Based Technologies</span>
+                </div>
+            </div>
+
+            <nav class="mb-4 md:mb-0">
+                <ul class="flex flex-wrap justify-center space-x-4 text-sm font-bold text-gray-600">
+                    <li><a href="index.html" class="text-biznetBlue hover:underline">HOME</a></li>
+                    <li><a href="biodata.html" class="hover:text-biznetBlue transition">BIODATA</a></li>
+                    <li><a href="contact_us.html" class="hover:text-biznetBlue transition">CONTACT</a></li>
+                    <li><a href="posts.html" class="hover:text-biznetBlue transition">POSTS</a></li>
+                    <li><a href="freepage.html" class="hover:text-biznetBlue transition">FREE PAGE</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="bg-white py-12 md:py-20">
+        <div class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center">
+            <div class="md:w-1/2 md:pr-10 text-center md:text-left mt-8 md:mt-0">
+                <h1 class="text-3xl md:text-5xl font-bold text-biznetBlue mb-6">Website Design & Dev</h1>
+                <p class="text-lg text-gray-600 mb-8">Biznet has provided website development solutions since 1995.</p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="contact_us.html" class="px-8 py-3 bg-biznetGreen text-white font-bold rounded-full shadow-lg hover:bg-green-600 transition transform hover:scale-105 text-center">
+                        CONTACT US
+                    </a>
+
+                    <a href="https://fti.unai.edu" target="_blank" class="px-8 py-3 border-2 border-biznetBlue text-biznetBlue font-bold rounded-full hover:bg-biznetBlue hover:text-white transition transform hover:scale-105 text-center">
+                        FTI UNAI
+                    </a>
+
+                    <a href="https://unai.edu" target="_blank" class="px-8 py-3 border-2 border-gray-400 text-gray-500 font-bold rounded-full hover:bg-gray-500 hover:text-white transition transform hover:scale-105 text-center">
+                        UNAI Website
+                    </a>
+                </div>
+
+            </div>
+            
+            <div class="md:w-1/2 flex justify-center">
+                <img src="image/creative.png" alt="Creative" class="max-w-full h-auto drop-shadow-xl animate-pulse-slow">
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-400 py-6 text-sm text-center mt-auto">
+        <p>&copy; 2025 Biznet Clone Project.</p>
+    </footer>
+
+</body>
+</html>
